@@ -1,0 +1,77 @@
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 500px;
+  height: 350px;
+}
+
+.banner {
+  height: 80px;
+  background-color: #e0e0e0;
+}
+
+.profilePic {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin: -64px auto 0;
+  display: block;
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  color: #666;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+}
+
+h1 {
+  font-size: 28px;
+  margin: 10px 0 20px;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: #ccc;
+}
+
+.icon:last-child {
+  fill: #4caf50;
+}
+
+.button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background-color: #2980b9;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.6);
+}

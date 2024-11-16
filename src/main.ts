@@ -18,11 +18,4 @@ document.addEventListener("DOMContentLoaded", () => {
   if (app) {
     app.appendChild(cardElement);
   }
-
-  const btn = document.getElementById("btn") as HTMLButtonElement;
-  const label = document.getElementById("label") as HTMLElement;
-
-  btn.addEventListener("click", () => {
-    label.textContent = "pepe";
-  });
 });
