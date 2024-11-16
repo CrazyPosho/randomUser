@@ -4,12 +4,12 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 500px;
-  height: 350px;
+  height: 450px;
 }
 
 .banner {
   height: 80px;
-  background-color: #e0e0e0;
+  background-color: #2980b9;
 }
 
 .profilePic {
@@ -74,4 +74,17 @@ h1 {
 .button:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.6);
+}
+.errorCard {
+  background-color: #f8d7da;
+  border: 1px solid #f5c2c7;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  color: #842029;
+  font-size: 16px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

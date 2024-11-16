@@ -1,21 +1,16 @@
 import { Card } from "./components/Card";
 import "./styles.css";
-import CardProps from "./components/Card";
 
-let name = "pepe";
-const changeName = () => {
-  name = "papo";
-};
-
-const cardProps: CardProps = {
-  nombreUsuario: name,
-  cambiarUsuario: changeName,
-};
-document.addEventListener("DOMContentLoaded", () => {
-  const app = document.querySelector<HTMLDivElement>("#app");
-
-  const cardElement = Card(cardProps);
-  if (app) {
-    app.appendChild(cardElement);
+const main = async () => {
+  try {
+    const container = document.getElementById("app"); // Asegúrate de tener un elemento con id="app" en tu HTML
+    if (container) {
+      const cardElement = await Card();
+      container.appendChild(cardElement);
+    }
+  } catch (error) {
+    console.error("Error in main:", error);
   }
-});
+};
+
+main();

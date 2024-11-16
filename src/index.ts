@@ -1,20 +1,12 @@
-export interface Name {
-  first: string;
-  last: string;
-}
-
-export interface Location {
-  country: string;
-}
-
-export interface User {
-  name: Name;
-  cell: string;
-  email: string;
-  gender: string;
-  location: Location;
-}
-
-export interface ApiResponse {
-  results: User[];
+export interface UserData {
+  results: Array<{
+    name: {
+      first: string;
+      last: string;
+    };
+    picture: {
+      large: string;
+    };
+    email: string;
+  }>;
 }
