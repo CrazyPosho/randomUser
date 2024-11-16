@@ -1,196 +1,79 @@
-/* Reset and base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: "Arial", sans-serif;
-  background-color: #f0f2f5;
-  color: #333;
-  line-height: 1.6;
-  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  height: 100vh;
+  width: 100vw;
 
-/* Container styles */
-.container {
-  width: 100%;
-  max-width: 800px;
-  margin: 2rem;
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0;
 }
-
-/* Header styles */
-h1 {
-  text-align: center;
-  color: #2c3e50;
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
-/* Results section styles */
-.results {
-  padding: 2rem;
-  background-color: #f8f9fa;
+.card {
+  background-color: white;
   border-radius: 8px;
-  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 500px;
+  height: 350px;
 }
-
-.results h2 {
-  color: #2c3e50;
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
-  border-bottom: 2px solid #e0e0e0;
-  padding-bottom: 0.5rem;
+.banner {
+  height: 80px;
+  background-color: #e0e0e0;
 }
-
-/* User info styles */
-.user-info {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.5rem;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.user-info p,
-.user-info div:not(.value) {
-  font-weight: 600;
-  color: #2c3e50;
-  font-size: 1.1rem;
-}
-
-.value {
-  color: #3498db;
-  font-size: 1.1rem;
-  padding: 0.75rem 1rem;
-  background-color: #ffffff;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-}
-
-/* Button styles */
-#btn {
+.profile-pic {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin: -64px auto 0;
   display: block;
-  width: 100%;
-  max-width: 200px;
+}
+.content {
+  padding: 20px;
+  text-align: center;
+}
+h2 {
+  color: #666;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+}
+h1 {
+  font-size: 28px;
+  margin: 10px 0 20px;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+  max-width: 300px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+}
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: #ccc;
+}
+.icon:last-child {
+  fill: #4caf50;
+}
+.button {
   background-color: #3498db;
   color: white;
+  padding: 10px 20px;
   border: none;
   border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
 }
 
-#btn:hover {
+.button:hover {
   background-color: #2980b9;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#btn:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Hover effects */
-.value:hover {
-  background-color: #f8f9fa;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Animation for loading state */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.user-info {
-  animation: fadeIn 0.5s ease-out;
-}
-
-/* Loading animation */
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.loading .value {
-  animation: pulse 1.5s infinite;
-}
-
-/* Responsive styles */
-@media (max-width: 600px) {
-  .container {
-    margin: 1rem;
-    padding: 1rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  .results {
-    padding: 1rem;
-  }
-
-  .user-info {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-
-  .value {
-    margin-bottom: 1rem;
-  }
-
-  #btn {
-    max-width: 100%;
-    padding: 0.875rem 1.5rem;
-  }
-}
-
-/* Print styles */
-@media print {
-  body {
-    background: none;
-  }
-
-  .container {
-    box-shadow: none;
-    margin: 0;
-    padding: 1rem;
-  }
-
-  #btn {
-    display: none;
-  }
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.6);
 }

@@ -3,7 +3,7 @@ export async function fetchData<T>(url: string): Promise<T | null> {
     const response = await fetch(url);
 
     if (!response.ok) {
-      throw new Error("La red tiene es un bobo");
+      throw new Error("La red tiene problema");
     }
     const data = (await response.json()) as T;
     return data;

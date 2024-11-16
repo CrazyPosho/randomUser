@@ -1,55 +1,28 @@
-import { ApiResponse } from "./index";
-import { fetchData } from "./api";
+import { Card } from "./components/Card";
 import "./styles.css";
+import CardProps from "./components/Card";
 
+let name = "pepe";
+const changeName = () => {
+  name = "papo";
+};
+
+const cardProps: CardProps = {
+  nombreUsuario: name,
+  cambiarUsuario: changeName,
+};
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div class="container">
-    <h1>API Fetcher - Random User</h1>
-   
-    <div id="results" class="results">
-      <h2>Resultados:</h2>
-      <div class="user-info">
+  const app = document.querySelector<HTMLDivElement>("#app");
 
-          <p>Nombre:</p>
-          <div id="name" class="value"></div>
+  const cardElement = Card(cardProps);
+  if (app) {
+    app.appendChild(cardElement);
+  }
 
-          <p>Celular:</p>
-          <div id="cell" class="value"></div>
-
-          <div>Email:</div>
-          <div id="email" class="value"></div>
-
-          <div>Género:</div>
-          <div id="genderValue" class="value"></div>
-
-          <div>Ubicación:</div>
-          <div id="location" class="value"></div>
-        </div>
-        <button id="btn">Buscar</button>
-    </div>
-  </div>
-`;
-  const url = "https://randomuser.me/api/";
-
-  const nameValue = document.getElementById("name") as HTMLElement;
-  const cellValue = document.getElementById("cell") as HTMLElement;
-  const emailValue = document.getElementById("email") as HTMLElement;
-  const genderValue = document.getElementById("genderValue") as HTMLElement;
-  const locationValue = document.getElementById("location") as HTMLElement;
   const btn = document.getElementById("btn") as HTMLButtonElement;
-  const displayData = async () => {
-    const data = await fetchData<ApiResponse>(url);
-    const user = data?.results[0];
-    if (!data) return;
-    nameValue.textContent = ` ${user?.name.first} ${user?.name.last}`;
-    cellValue.textContent = user?.cell ?? "No disponible";
-    emailValue.textContent = user?.email ?? "No disponible";
-    genderValue.textContent = user?.gender ?? "No disponible";
-    locationValue.textContent = user?.location.country ?? "No disponible";
-  };
+  const label = document.getElementById("label") as HTMLElement;
 
   btn.addEventListener("click", () => {
-    displayData();
+    label.textContent = "pepe";
   });
 });
